@@ -56,6 +56,7 @@ class _AppLifecycleDisplayState extends State<AppLifecycleDisplay> {
 
   void _handleTransition(String name) {
     setState(() {
+      print('name: $name');
       _states.add(name);
     });
     _scrollController.animateTo(
@@ -67,6 +68,8 @@ class _AppLifecycleDisplayState extends State<AppLifecycleDisplay> {
 
   void _handleStateChange(AppLifecycleState state) {
     setState(() {
+      // ignore: avoid_print
+      print('old/new states: $_state/$state');
       _state = state;
     });
   }
